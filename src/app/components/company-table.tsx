@@ -1,7 +1,9 @@
-import { getCompanies } from '@/lib/api';
-import { useQuery } from '@tanstack/react-query';
+'use client';
+
 import React from 'react';
-import CompanyRow from './company-row';
+import { useQuery } from '@tanstack/react-query';
+import { getCompanies } from '@/lib/api';
+import CompanyRow from '@/app/components/company-row';
 
 export interface CompanyTableProps {}
 

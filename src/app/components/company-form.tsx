@@ -86,30 +86,28 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
               label="Status"
               placeholder="Status"
               name="status"
+              as="select"
             >
-              <select>
-                {(Object.values(CompanyStatus) as CompanyStatus[]).map(
-                  (status) => (
-                    <option key={status} value={status}>
-                      <StatusLabel status={status} styled={false} />
-                    </option>
-                  ),
-                )}
-              </select>
+              {(Object.values(CompanyStatus) as CompanyStatus[]).map(
+                (status) => (
+                  <option key={status} value={status}>
+                    <StatusLabel status={status} styled={false} />
+                  </option>
+                ),
+              )}
             </InputField>
             <InputField
               required
               label="Country"
               placeholder="Country"
               name="countryId"
+              as="select"
             >
-              <select>
-                {countries?.map((country) => (
-                  <option key={country.id} value={country.id}>
-                    {country.title}
-                  </option>
-                ))}
-              </select>
+              {countries?.map((country) => (
+                <option key={country.id} value={country.id}>
+                  {country.title}
+                </option>
+              ))}
             </InputField>
           </div>
           <div className="flex flex-col flex-1 gap-5">
@@ -119,14 +117,13 @@ export default function CompanyForm({ onSubmit }: CompanyFormProps) {
               label="Category"
               placeholder="Category"
               name="categoryId"
+              as="select"
             >
-              <select>
-                {categories?.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.title}
-                  </option>
-                ))}
-              </select>
+              {categories?.map((category) => (
+                <option key={category.id} value={category.id}>
+                  {category.title}
+                </option>
+              ))}
             </InputField>
             <InputField
               required
